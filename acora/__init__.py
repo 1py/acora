@@ -100,12 +100,13 @@ class PyAcora(object):
         return list(self.filefind(f))
 
 try:
-    from acora._nfa2dfa import nfa2dfa, insert_keyword, NfaState
+    from ._nfa2dfa import nfa2dfa, insert_keyword, NfaState
 except ImportError:
     # C module not there ...
-    from acora.nfa2dfa import nfa2dfa, insert_keyword, NfaState
+    from .nfa2dfa import nfa2dfa, insert_keyword, NfaState
+
 try:
-    from acora._acora import UnicodeAcora, BytesAcora
+    from ._acora import UnicodeAcora, BytesAcora
 except ImportError:
     # C module not there ...
     UnicodeAcora = BytesAcora = PyAcora
